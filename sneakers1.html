@@ -1,0 +1,590 @@
+<?php include 'connectivity.php' ;
+session_start();
+$x=$_SESSION['name'];
+echo $x;
+$variable="0";
+if(isset($_GET['id']))
+$variable= $_GET['id'];
+echo $variable;
+$r1="SELECT products,cost FROM products where id='$variable'";
+$j = mysqli_query($con,$r1) or die("error");
+
+while($row=mysqli_fetch_array($j))
+{
+echo $row[0];
+$r3="INSERT into $x (products,cost,date,time) VALUES ('$row[0]','$row[1]',CURDATE(),CURTIME()) ";
+$_SESSION['cost']+=$row[1];
+$_SESSION['prod']++;
+$result2 = mysqli_query($con,$r3) or die(mysqli_error($con)); 
+}
+?>
+<html>
+
+<head>
+	
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+	
+<script>
+
+	$(document).ready(function() {
+				$("img").mouseenter(function(){$(this).addClass('sticky');});
+				$("img").mouseleave(function(){$(this).removeClass('sticky');});
+				});
+
+
+</script>
+<style>
+a{color:black;text-decoration: none;}
+ a:hover{color:white; text-decoration:none;transition:0.2s;}		
+img
+{
+width:250px;
+	height:200px;
+	margin-top:20px;
+	margin-left:25px;  -moz-transition:-moz-transform 0.5s ease-in; -webkit-transition:-webkit-transform 0.5s ease-in; -o-transition:-o-transform 0.5s ease-in;}
+ 
+	img.sticky{ -moz-transform:scale(2); -webkit-transform:scale(2);-o-transform:scale(2);}	
+button
+	{
+height:40px;
+	width:150px;
+	text-align:center;
+	margin-left:80px;
+			border:2px solid red;
+			background-color:white;
+			transition-duration: 0.4s;
+			border-radius: 8px;
+		}
+		button:hover
+		{	
+			background-color: red;
+			color:white;
+		}
+		#text
+		{
+			
+			text-align: center;
+			margin-left:25px;
+			margin-right:25px;
+			
+		}
+		
+		header
+		{
+			text-align:center;
+			background-color:#B0C4DE;
+			position:fixed;
+			width:100%;
+			height:30px;
+			margin-top:0px;
+			font-family:"Comic Sans MS";
+		
+}
+	
+</style>
+	
+
+</head>
+
+
+<body>
+	
+	 
+<header>
+		
+CONVERSE
+	
+
+</header>
+ 
+	
+<table>
+
+		
+<tr>
+			
+<td>
+				
+<img src="https://thebragaffair.files.wordpress.com/2016/01/g20414-ct001u-16s01.jpg" >
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+				
+<div id="text">
+				
+	Chuck Taylor All Stars 
+<br> 
+				
+	<em>Colour</em>:
+ White,Red, Black <br> 
+				
+	<em>Size</em>: US 6,7,7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 2000
+
+				
+</div>
+
+				
+<button type="button" id="s1"><a class="btn-btn-primary" href="sneakers.php?id=s1" >add to cart</a></button>
+
+			
+</td>
+
+			
+<td>
+				
+<img src="http://demandware.edgesuite.net/aalw_prd/on/demandware.static/-/Sites-ConverseMaster/default/dw761f18fa/images/hi-res/151896C_standard.png" >
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars
+ Freedom<br> 
+				
+	<em>Colour</em>:
+White,Red, Black<br> 
+				
+	<em>Size</em>: US 6,7,7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 2200
+
+
+
+				
+</div>
+
+				
+<button type="button" id="s2"><a class="btn-btn-primary" href="sneakers.php?id=s2"  >add to cart</button>
+
+			
+</td>
+ 
+			
+<td>
+				
+<img src="http://www.pinopinion.com/images/topics/t_2467_5.jpg"  >
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+			
+	Chuck Taylor All Stars
+ Classic <br> 
+				
+	<em>Colour</em>:White,Red, Blue
+<br> 
+
+	<em>Size</em>: US 6,7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 2295
+
+				
+</div>
+ 
+				
+<button type="button" id="s3"><a class="btn-btn-primary" href="sneakers.php?id=s3"  >add to cart</button>
+
+			
+</td>
+
+		
+</tr> 
+		
+<tr>
+			
+<td>
+				
+<img src="http://redsoledmomma.com/wp-content/uploads/2013/11/135914C_standard.png">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars
+ British Flag<br> 
+				
+	<em>Colour</em>:
+Blue,Red,Green<br> 
+				
+	<em>Size</em>: US 6,7,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 2000
+
+
+
+				
+</div>
+
+				
+<button type="button" id="s4"><a class="btn-btn-primary" href="sneakers.php?id=s4"  >add to cart</a></button>
+
+			
+</td>
+
+			
+<td>
+				
+<img src="http://demandware.edgesuite.net/aalw_prd/on/demandware.static/-/Sites-ConverseMaster/default/dwab13e89f/images/hi-res/151193C_shot1.png">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars 
+<br> 
+				
+	<em>Colour</em>:
+Blue,Red,Purple,Green
+<br> 
+			
+	<em>Size</em>: US 8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 2599
+
+				
+</div>
+				
+<button type="button" id="s5"><a class="btn-btn-primary" href="sneakers.php?id=s5" >add to cart</a></button>
+
+
+
+			
+</td>
+ 
+			
+<td>
+				
+<img src="http://www.soleracks.com/wp-content/uploads/2015/02/Converse-DC-Comics-Batman-2015-800x450.jpg">&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+			
+<div id="text">
+				
+	Chuck Taylor All Stars Batman
+<br> 
+				
+	<em>Colour</em>:
+Blue,Red,Purple
+<br> 
+				
+	<em>Size</em>: US 6,7,7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 1899
+
+
+
+				
+</div>
+				
+<button type="button" id="s6"><a class="btn-btn-primary" href="sneakers.php?id=s6"  >add to cart</a></button>
+
+
+			
+</td>
+
+		
+</tr> 
+		
+<tr>
+			
+<td>
+				
+<img src="http://data.whicdn.com/images/24006715/large.jpg">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars Guns N' Roses
+<br> 
+				
+	<em>Colour</em>:
+Blue,Purple,Black,Green
+<br> 
+				
+	<em>Size</em>: US 6,7,7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 1580
+
+
+
+				
+</div>
+
+				
+<button type="button" id="s7"><a class="btn-btn-primary" href="sneakers.php?id=s7"  >add to cart</a></button>
+
+			
+</td>
+
+			
+<td>
+				
+<img src="http://www.soleracks.com/wp-content/uploads/2015/02/Converse-DC-Comics-Superman-800x450.jpg">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars Superman
+<br> 
+				
+	<em>Colour</em>:
+
+White,Purple,Black,Green
+<br> 
+				
+	<em>Size</em>: US 7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 2200
+
+
+
+				
+</div>
+				
+<button type="button" id="s8"><a class="btn-btn-primary" href="sneakers.php?id=s8"  >add to cart</a></button>
+
+
+			
+</td>
+ 
+			
+<td>
+				
+<img src="https://img1.etsystatic.com/051/1/8651529/il_fullxfull.665536829_jckf.jpg">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars Nirvana
+<br> 
+				
+	<em>Colour</em>:
+Blue,White,Green
+<br> 
+				
+	<em>Size</em>: US 6,7,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 2190
+
+
+
+				
+</div>
+
+	
+<button type="button" id="s9"><a class="btn-btn-primary" href="sneakers.php?id=s9"  >add to cart</a></button>
+
+
+		
+</td>
+
+		
+</tr>
+		
+<tr>
+			
+<td>
+				
+<img src="http://images.lpcdn.ca/435x290/200809/04/7425-converse-kurt-cobain-scribbles.jpg">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars Kurt Cobain Scribbles <br>
+
+	em>Colour</em>:
+Red,White,Green
+<br>
+				
+	<em>Size</em>: US 6,7,7.5 <br>
+
+	<em>Cost</em>: Rs 2190
+
+
+
+
+				
+
+
+				
+</div>
+
+
+	
+<button type="button" id="s10"><a class="btn-btn-primary" href="sneakers.php?id=s10"  >add to cart</a></button>
+
+
+		
+</td>
+
+			
+<td>
+				
+<img src="http://www.mynewcheap.co.uk/images/uk/Converse-Chuck-Taylor-All-Star-Geometric-Pattern-Print-Multi-Colored-High-Tops-Canvas-Sneakers_LRG.jpg">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars Kurt Cobain Scribbles  Geometric Pattern 
+<br>				
+	<em>Colour</em>:
+Red,Blue,Green<br> 
+				
+	<em>Size</em>: US 6,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 1980
+
+
+
+				
+</div>
+
+
+
+<button type="button" id="s11"><a class="btn-btn-primary" href="sneakers.php?id=s11"  >add to cart</a></button>
+
+
+			
+</td>
+ 
+			
+<td>
+				
+<img src="http://463872142.r.aspirationcdn.net/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/C/o/Converse-Kids-Chuck-Taylor-All-Star-Low-Top--Grade-School-Black--White_NhhH0_1.jpg">
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp <br>
+				
+<div id="text">
+				
+	Chuck Taylor All Stars Low Top  <br> 
+				
+	<em>Colour</em>:Purple,White,Green
+<br> 
+				
+	<em>Size</em>: US 7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 1780				
+</div>
+
+
+	
+<button type="button" id="s12"><a class="btn-btn-primary" href="sneakers.php?id=s12"  >add to cart</a></button>
+
+
+		
+</td>
+
+		
+</tr>
+		
+<tr>
+			
+<td>
+				
+<img src="https://pixabay.com/static/uploads/photo/2013/07/12/18/20/chucks-153310_960_720.png"  >
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp<br>
+			
+<div id="text">
+			
+	Chuck Taylor All Stars   
+	<br>		
+	<em>Colour</em>:
+Red,White,Blue
+<br> 
+				
+	<em>Size</em>: US 6,7,7.5 <br>
+				
+	<em>Cost</em>: Rs 2190
+
+
+
+				
+</div>
+
+	
+<button type="button" id="s13"><a class="btn-btn-primary" href="sneakers.php?id=s13"  >add to cart</a></button>
+
+
+		
+</td>
+
+			
+<td>
+				
+<img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=80703776"  >
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp
+			
+<div id="text">
+				
+	Chuck Taylor All Stars  
+	<br>			
+	<em>Colour</em>:Purple,White,Green<br> 
+				
+	<em>Size</em>: US 6,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 1900
+
+
+
+				
+</div>
+
+
+	
+<button type="button" id="s14"><a class="btn-btn-primary" href="sneakers.php?id=s14"  >add to cart</a></button>
+
+
+		
+</td>
+ 
+			
+<td>
+				
+<img src="http://img5a.flixcart.com/image/shoe/e/y/c/black-150763c-converse-5-200x200-imaedf33rywpybrx.jpeg" >
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp
+			
+<div id="text">
+				
+	Chuck Taylor All Stars  
+					
+	<em>Colour</em>:
+
+Red,White,Green<br> 
+					
+	<em>Size</em>: US 7.5,8,8.5,9
+ <br>
+				
+	<em>Cost</em>: Rs 1850				
+</div>
+
+	
+<button type="button" id="s15"><a class="btn-btn-primary" href="sneakers.php?id=s15"  >add to cart</a></button>
+
+
+		
+</td>
+
+		
+</tr>
+	
+</table>
+</body>
+
+</html>
