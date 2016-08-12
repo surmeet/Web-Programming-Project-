@@ -1,0 +1,214 @@
+<html>
+<head>
+
+	<script>
+	$(document).ready(function(){
+    $("search_button").click(function(){
+        alert($("#search").val());
+    });
+});
+});
+
+	</script>
+	<style>
+	header
+	{
+		width:99%;
+		background-color:#008CBA;
+		position:fixed;
+		height:100px;
+	}
+	img
+	{
+		float:left;
+		padding-top: 10px;
+		padding-right: 10px;
+    		padding-left: 10px;
+		padding-bottom: 10px;
+		margin-top:20px;
+	}
+	.search_textbox
+	{
+		background: white; 
+		border: 1px solid #848484;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		outline:0;
+		height:30px;		
+		width: 60%;
+		padding-left:10px;
+		padding-right:0px;
+		margin-bottom: 25px;
+		margin-top:40px;	
+	}
+	#search_button
+	{
+		-moz-border-radius:6px;
+
+		-webkit-border-radius:6px;
+	
+	border-radius:6px;
+	
+	cursor:pointer;
+	
+	color:#333333;
+	
+	font-family:Arial;
+	
+	font-size:15px;
+	
+	font-weight:bold;
+	
+	padding:6px 24px;
+		height: 30px;
+	}
+
+	#search_button:hover
+	{
+		border-style:solid;
+ 		border-color:#ffed64;
+		border-width:3px;	
+	}
+	#signin_button:hover,#signup_button:hover
+	{
+		border-style:solid;
+ 		border-color:red;
+		border-width:2px;
+		background-color:red;
+		color:white;	
+	}
+
+	#search_button
+	{
+		
+		-moz-box-shadow: 0px 1px 0px 0px #fff6af;
+
+		-webkit-box-shadow: 0px 1px 0px 0px #fff6af;
+	
+	box-shadow: 0px 1px 0px 0px #fff6af;
+		background-color:#ffed64;
+		border:1px solid #ffed64;
+
+	}
+	#signin_button,#signup_button
+	{
+		background-color:white;
+		border:1px solid white;
+	
+		transition-duration:0.4s;	
+	}	
+	ul
+	{
+    		list-style-type: none;
+    		position:absolute;
+		top: 100px;
+		left: 0px;
+    		width: 8%;
+    		background-color: white;
+		
+		
+	}
+	li a 
+	{
+    		display: block;
+    		color:black;
+    		padding: 8px 0 8px 16px;
+    		text-decoration: none;
+		font-family:"Lucida console";
+		font-weight: bold;
+	}
+	li a:hover:.active 
+	{
+    		background-color:#0f6cb2;
+    		color: white;
+	}
+	li a:hover:not(.active) 
+	{
+    		background-color: #555;
+    		color: white;
+	}
+	.dropbtn
+	{
+    		-moz-border-radius:6px;
+
+		-webkit-border-radius:6px;
+	
+	border-radius:6px;
+	
+	cursor:pointer;
+	
+	color:black;
+	
+	font-family:Arial;
+	
+	font-size:15px;
+	
+	font-weight:bold;
+	
+	padding:6px 24px;
+		height: 30px;
+		background-color:white;
+		border:1px solid white;
+	}
+	.dropdown 
+	{
+    		position: relative;
+    		display: inline-block;
+	}
+	.dropdown-content
+	{
+   		display: none;
+    		position: absolute;
+    		background-color: #f9f9f9;
+    		min-width: 160px;
+    		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	}
+
+	.dropdown-content a 
+	{
+    		color: black;
+    		padding: 12px 16px;
+    		text-decoration: none;
+    		display: block;
+	}
+	.dropdown-content a:hover {background-color: #f1f1f1}
+	.dropdown:hover .dropdown-content
+	{
+    		display: block;
+	}
+	.dropdown:hover .dropbtn 
+	{
+    		background-color: #3e8e41;
+	}
+	</style>
+
+</head>
+</body>	
+	<header>
+		<img src="http://img6a.flixcart.com/www/prod/images/flipkart_logo-c76c6a19.png">    
+		<input type="text" placeholder="So,what are you wishing for today?" id="search" class="search_textbox">
+		<input type="submit" value="SEARCH" id="search_button">
+		<div class="dropdown">
+  			<button class="dropbtn">WELCOME</button>
+  				<div class="dropdown-content">
+  					<a href="cart.html">CHECKOUT</a>
+    					<a href="login.html">LOG OUT</a>
+  				</div>
+		</div>
+	</header>
+
+	<iframe id="iframe_" src="sneakers.html" width="90%" height="75%" name="mainpage" style="position:absolute;bottom:0px;right:0px;" frameBorder="0px"> </iframe>
+	<ul>
+  		<p>FOOTWEAR</p>
+		<li><a 	class="active" href="sneakers.html" target="mainpage">SNEAKERS</a></li>
+		<li><a  href="heels.html" target="mainpage">HEELS</a></li>
+		<li><a  href="ethnic.html" target="mainpage">ETHNIC</a></li>
+		<li><a  href="sandals.html" target="mainpage">SANDALS</a></li> 
+		<p>APPARELS </p>
+		<li><a href="kurtis.html" target="mainpage">KURTIS</a></li>
+		<li><a href="tops.html" target="mainpage">TOPS</a></li>
+		<li><a href="jeans.html" target="mainpage">JEANS</a></li>
+	</ul>
+<body>
+</html>
